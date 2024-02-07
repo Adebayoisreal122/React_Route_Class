@@ -9,11 +9,11 @@ import About from './components/About'
 
 import './App.css'
 import Contact from './components/Contact';
-import VanDetails from './components/Van/VanDetails';
-import VanPrice from './components/Van/VanPrice';
-import VanIncome from './components/Van/VanIncome';
 import Layout from './components/Layout';
 import Frontend from './components/frontend';
+import Signup from './components/signup';
+import FormikSignup from './components/Formik';
+
 
 
 function App() {
@@ -28,11 +28,11 @@ function App() {
             <Route path="about" element={<About/>} />
             <Route path="contact" element={<Contact />} />
             <Route path="api" element={<Frontend/>} />
+            <Route path="signup" element={<Signup/>} />
+            <Route path="formik" element={<FormikSignup/>} />
 
-          <Route path="van" element={<VanDetails/>}>
-            <Route path="price" element={<VanPrice />} />
-            <Route path="income" element={<VanIncome />} />
-          </Route>
+
+
         </Route>
     </Routes>
   )
