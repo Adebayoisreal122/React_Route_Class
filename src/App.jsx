@@ -13,6 +13,7 @@ import Layout from './components/Layout';
 import Frontend from './components/frontend';
 import Signup from './components/signup';
 import FormikSignup from './components/Formik';
+import Signin from './components/Signin';
 
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="api" element={<Frontend/>} />
             <Route path="signup" element={<Signup/>} />
             <Route path="formik" element={<FormikSignup/>} />
+            <Route path="signin" element={<Signin/>} />
 
 
 
