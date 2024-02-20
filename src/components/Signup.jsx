@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -13,14 +14,16 @@ const Signup = () => {
       const [userName, setUserName] = useState("");
       const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
-      
+      const Navigate = useNavigate();
     const handleSubmit = (e) => {
       e.preventDefault();
       axios.post(URL, {
         firstName, secondName, userName, email, password
       }
       ).then((res) => {
-        console.log(res);}
+        console.log(res);
+      Navigate('/signin');
+      }
       ).catch((err) => {
         console.log(err);
       })}

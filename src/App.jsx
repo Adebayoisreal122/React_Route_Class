@@ -14,6 +14,8 @@ import Frontend from './components/frontend';
 import Signup from './components/signup';
 import FormikSignup from './components/Formik';
 import Signin from './components/Signin';
+import Counter from './components/Counter';
+import UserAuthentication from './components/UserAuthentication';
 
 
 
@@ -29,6 +31,9 @@ function App() {
             <Route path="about" element={<About/>} />
             <Route path="contact" element={<Contact />} />
             <Route path="api" element={<Frontend/>} />
+            <Route path="redux" element={<Counter/>} />
+            <Route path="user" element={<UserAuthentication/>} />
+
             <Route path="signup" element={<Signup/>} />
             <Route path="formik" element={<FormikSignup/>} />
             <Route path="signin" element={<Signin/>} />
