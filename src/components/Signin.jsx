@@ -7,27 +7,30 @@ const Signin = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const Navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(URL, {
-            email, password
-        }).then((res) => {
-            const { status, message, user, token } = res.data; // Assuming response structure from server
-            console.log(res);
-            if (status) {
-                // Handle successful signin
-                localStorage.setItem('token', token); // Assuming you want to store the token in localStorage
-                Navigate('/home');
-            } else {
-                // Handle failed signin
-                console.log(message);
-            }
-        }).catch((err) => {
-            console.log(err);
-        });
+        
+        axios.post(URL, { email, password })
+            .then((res) => {
+                const { status, message, user, token } = res.data;
+                console.log(res);
+                if (status) {
+                    console.log(user, token);
+                    localStorage.setItem('token', token);
+                    Navigate('/');
+                } else {
+                    setErrorMessage(message);
+                }
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+                setErrorMessage('An error occurred. Please try again later.');
+            });
     };
+    
 
     return (
         <>
