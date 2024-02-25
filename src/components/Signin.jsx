@@ -17,10 +17,10 @@ const Signin = () => {
             .then((res) => {
                 const { status, message, user, token } = res.data;
                 console.log(res);
+                Navigate('/Home');
                 if (status) {
                     console.log(user, token);
                     localStorage.setItem('token', token);
-                    Navigate('/');
                 } else {
                     setErrorMessage(message);
                 }

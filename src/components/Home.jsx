@@ -23,7 +23,11 @@ const Home = ({ token }) => {
   }, [token, navigate]);
 
   return (
-    <div className="text-dark">Home</div>
+    <div className="text-dark">
+      <h1>home</h1>
+     <p>Verification Result: {verificationResult}</p>
+    </div>
+    
   );
 };
 
